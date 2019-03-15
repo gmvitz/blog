@@ -1,5 +1,3 @@
 # blog
 
-This is a line from RStudio
-
-This is a line from Github
+This will be the README for my blog
