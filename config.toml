@@ -1,7 +1,7 @@
 baseurl = "/"
 languageCode = "en-us"
 title = "Greg does R"
-theme = "hugo-lithium"
+theme = "hugo-theme-minos"
 googleAnalytics = ""
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
@@ -21,6 +21,8 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [params]
     description = "A website built through Hugo and blogdown."
+    
+    # smartToc = true
 
     # options for highlight.js (version, additional languages, and theme)
     highlightjsVersion = "9.12.0"

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on Greg does R</title>
+    <link>/tags/golang/</link>
+    <description>Recent content in Golang on Greg does R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My First Blog!</title>
+      <link>/2019/03/24/my-first-blog/</link>
+      <pubDate>Sun, 24 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/03/24/my-first-blog/</guid>
+      <description>Hi there! My name is Greg and this is my first blog. I’m unsure what this will turn into, but I have interests in the energy sector and soccer. Since moving to DC and getting a real job I have also followed politics a bit more closely, but I am unsure if that is a good thing.
+Thanks for checking this out, I hope to write more posts in the future!</description>
+    </item>
+    
+  </channel>
+</rss>
