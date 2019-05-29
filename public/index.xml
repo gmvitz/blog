@@ -6,29 +6,27 @@
     <description>Recent content on Greg does R</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>My First Blog!</title>
-      <link>/2019/03/24/my-first-blog/</link>
-      <pubDate>Sun, 24 Mar 2019 00:00:00 +0000</pubDate>
+      <link>/2019/05/29/my-first-blog/</link>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/2019/03/24/my-first-blog/</guid>
-      <description>Hi there! My name is Greg and this is my first blog. I’m unsure what this will turn into, but I have interests in the energy sector and soccer. Since moving to DC and getting a real job I have also followed politics a bit more closely, but I am unsure if that is a good thing.
-Thanks for checking this out, I hope to write more posts in the future!</description>
+      <guid>/2019/05/29/my-first-blog/</guid>
+      <description>Hi there! My name is Greg and this is my first blog, so I’m unsure what this will turn into. I currently work at the Federal Energy Regulatory Commission (FERC) and really enjoy my job. In college I studied Energy and Environmental Policy and then continued on to get my Masters degree in Agriculture and Resources Economics. I have long been interested in the energy industry so the topics discussed in this blog will largely fall within those bounds.</description>
     </item>
     
     <item>
-      <title>A Plain Markdown Post</title>
-      <link>/2016/12/30/a-plain-markdown-post/</link>
-      <pubDate>Fri, 30 Dec 2016 21:49:57 -0700</pubDate>
+      <title>Working with EIA Data</title>
+      <link>/2019/05/29/working-with-eia-data/</link>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/2016/12/30/a-plain-markdown-post/</guid>
-      <description>This is a post written in plain Markdown (*.md) instead of R Markdown (*.Rmd). The major differences are:
- You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (```{r}); A plain Markdown post is rendered through Blackfriday, and an R Markdown document is compiled by rmarkdown and Pandoc.  There are many differences in syntax between Blackfriday&amp;rsquo;s Markdown and Pandoc&amp;rsquo;s Markdown.</description>
+      <guid>/2019/05/29/working-with-eia-data/</guid>
+      <description>The United States Energy Information Administration (EIA) offers thousands of free data sets publicly, and they can all be found on their website here. I believe that each of the datasets can be downloaded as a CSV, however there is also an option to access the data through the EIA API. Today, I will be working with some data that I manually downloaded from the EIA website with generator level information.</description>
     </item>
     
     <item>
@@ -38,26 +36,6 @@ Thanks for checking this out, I hope to write more posts in the future!</descrip
       
       <guid>/about/</guid>
       <description>My name is Greg and this is my first time making a blog with Blogdown.</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/2015/07/23/hello-r-markdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/2015/07/23/hello-r-markdown/</guid>
-      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
-    </item>
-    
-    <item>
-      <title>Lorem Ipsum</title>
-      <link>/2015/01/01/lorem-ipsum/</link>
-      <pubDate>Thu, 01 Jan 2015 13:09:13 -0600</pubDate>
-      
-      <guid>/2015/01/01/lorem-ipsum/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
     </item>
     
   </channel>
