@@ -1,17 +1,14 @@
 ---
 title: My First Blog!
 author: Gregory Vitz
-date: '2019-05-29'
+date: '2019-05-28'
 slug: my-first-blog
 categories: []
 tags: []
 Categories:
-  - Development
   - R
 Description: ''
 Tags:
-  - development
-  - golang
 menu: ''
 ---
 
