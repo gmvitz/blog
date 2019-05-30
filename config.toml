@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://gergr.netlify.com/"
 languageCode = "en-us"
 title = "Greg does R"
 theme = "hugo-theme-minos"
