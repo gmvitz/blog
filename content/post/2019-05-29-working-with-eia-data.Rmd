@@ -32,11 +32,23 @@ operable <- "Operable" %>%
     set_names() %>% 
     read_excel(skip = 2, path = file, guess_max = 20000, n_max = 22050)
 
-proposed <- "Proposed" %>%  
+retired <- "Retired and Canceled" %>%  
     set_names() %>% 
-    read_excel(skip = 2, path = file, guess_max = 2000, n_max = 1218)
+    read_excel(skip = 2, path = file, guess_max = 4000, n_max = 4324)
 
+glimpse(operable)
 ```
 
+As you can see there are a ton of variables in this data. Since we plan on doing an analysis of added and lost capacity we will only need a few.
+
+```{r}
+# Units that began operation in 2018
+operable2018 <- operable %>% 
+    filter(`Operating Year` == 2018)
+
+# Units that retired in 2018
+retired2018 <- retired %>% 
+    filter(`Retirement Year` == 2018)
+```
 
 
