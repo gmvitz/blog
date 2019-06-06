@@ -15,4 +15,28 @@ Tags:
 menu: ''
 ---
 
-The United States Energy Information Administration (EIA) offers thousands of free data sets publicly, and they can all be found on their website [here](https://www.eia.gov/opendata/). I believe that each of the datasets can be downloaded as a CSV, however there is also an option to access the data through the EIA API. Today, I will be working with some data that I manually downloaded from the EIA website with generator level information. A future post may address how to use the EIA API to programatically use the data. 
+The United States Energy Information Administration (EIA) offers thousands of free data sets publicly, and they can all be found on their website [here](https://www.eia.gov/electricity/data/eia860/). I believe that each of the datasets can be downloaded as a CSV, however there is also an option to access the data through the EIA API. Today, I will be working with some data that I manually downloaded from the EIA website with generator level information. A future post may address how to use the EIA API to programatically get the data. 
+
+```{r message=FALSE}
+library(tidyverse)
+library(readxl)
+library(here)
+```
+
+Using `readxl` we can easily import the data downloaded from EIA. I used two separate pipes to handle some extra notes added at the bottom of the 
+
+```{r}
+file <- here("static", "data", "eia8602018er", "3_1_Generator_Y2018_Early_Release.xlsx")
+
+operable <- "Operable" %>%  
+    set_names() %>% 
+    read_excel(skip = 2, path = file, guess_max = 20000, n_max = 22050)
+
+proposed <- "Proposed" %>%  
+    set_names() %>% 
+    read_excel(skip = 2, path = file, guess_max = 2000, n_max = 1218)
+
+```
+
+
+
