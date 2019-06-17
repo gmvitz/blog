@@ -27,6 +27,8 @@ Using `readxl` we can easily import the data downloaded from EIA. I used two sep
 
 ```{r}
 file <- here("static", "data", "eia8602018er", "3_1_Generator_Y2018_Early_Release.xlsx")
+plant_file <- here("static", "data", "eia8602018er", "2___Plant_Y2018_Early_Release.xlsx")
+
 
 operable <- "Operable" %>%  
     set_names() %>% 
@@ -36,6 +38,11 @@ retired <- "Retired and Canceled" %>%
     set_names() %>% 
     read_excel(skip = 2, path = file, guess_max = 4000, n_max = 4324)
 
+plant <- "Plant" %>% 
+  set_names() %>% 
+  read_excel(skip = 2, path = plant_file, guess_max = 4000, n_max = 4324) %>% 
+  select(`Plant Code`, `Balancing Authority Code`)
+
 glimpse(operable)
 ```
 
@@ -44,11 +51,27 @@ As you can see there are a ton of variables in this data. Since we plan on doing
 ```{r}
 # Units that began operation in 2018
 operable2018 <- operable %>% 
-    filter(`Operating Year` == 2018)
+    filter(`Operating Year` == 2018) %>%
+    transmute(`Plant Code`, 
+              `Nameplate Capacity (MW)`, 
+              `Energy Source 1`,
+              status = 1)
 
 # Units that retired in 2018
 retired2018 <- retired %>% 
-    filter(`Retirement Year` == 2018)
+    filter(`Retirement Year` == 2018) %>% 
+    transmute(`Plant Code`, 
+              `Nameplate Capacity (MW)`, 
+              `Energy Source 1`,
+              status = 0)
+
+all_data <- bind_rows(operable2018, retired2018) %>% 
+    left_join(plant, by = "Plant Code")
 ```
 
+We joined the plant data with 
+
+```{r}
+
+```
 
