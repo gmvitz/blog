@@ -66,12 +66,28 @@ retired2018 <- retired %>%
               status = 0)
 
 all_data <- bind_rows(operable2018, retired2018) %>% 
-    left_join(plant, by = "Plant Code")
+    left_join(plant, by = "Plant Code") %>% 
+    rename(plant_code = `Plant Code`, 
+           nameplate = `Nameplate Capacity (MW)`, 
+           energy_source = `Energy Source 1`,
+           ba = `Balancing Authority Code`)
 ```
 
-We joined the plant data with 
+Joining the plant capacity and fuel data with balancing authority information will give an idea of what regions were impacted most by additions and retirements. Some minor data manipulation is needed in order to create a stacked bar chart. 
 
 ```{r}
-
+all_data <- all_data %>% 
+    mutate(capacity = if_else(status == 1, 
+                              nameplate, 
+                              -nameplate))
 ```
 
+Creating the first ggplot
+
+```{r}
+all_data %>% 
+    ggplot(aes(ba, capacity, fill = energy_source)) +
+    geom_bar(stat = "identity", position = "stack")
+```
+
+Not very pretty. Some easy changes could be made to improve the plot quickly.
