@@ -90,4 +90,50 @@ all_data %>%
     geom_bar(stat = "identity", position = "stack")
 ```
 
-Not very pretty. Some easy changes could be made to improve the plot quickly.
+Not very pretty. Some easy changes could be made to improve the plot quickly. Let's set a universal theme and reclassify some of the energy sources, while focusing on the major ISO/RTO regions in the United States.
+
+```{r}
+theme_set(theme_minimal())
+
+coal <- c("ANT", "BIT", "LIG", "SGC", "SUB", "WC", "RC")
+petrol <- c("DFO", "JF", "KER", "PC", "PG", "RFO", "SGP", "WO")
+other_gas <- c("BFG",  "OG")
+other_renew <- c("OBL", "SLW", "BLQ", "WDL", "LFG", "OBG")
+
+
+all_data2 <- all_data %>% 
+    mutate(source_recode = case_when(
+        energy_source %in% coal ~ "Coal",
+        energy_source %in% petrol ~ "Petroleum Products",
+        energy_source %in% other_gas ~ "Other Gas",
+        energy_source %in% other_renew ~ "Other Renewables",
+        energy_source == "NG" ~ "Natural Gas",
+        energy_source == "SUN" ~ "Solar",
+        energy_source == "WND" ~ "Wind",
+        energy_source == "GEO" ~ "Geothermal",
+        energy_source == "WAT" ~ "Hydro",
+        energy_source == "NUC" ~ "Nuclear",
+        TRUE ~ "Other"
+    )) 
+
+all_data2 %>% 
+    ggplot(aes(fct_reorder(ba, capacity, sum), capacity, fill = source_recode)) +
+    geom_bar(stat = "identity", position = "stack") +
+    theme(
+        axis.text.x = element_text(angle = 45, hjust = 1)
+    )
+```
+
+Lots of capacity was added in regions that we don't have BA codes for. If we drop those areas, we will get a better idea of which Balancing areas had capacity additions/losses.
+
+```{r}
+all_data2 %>% 
+    filter(ba != "NA") %>%
+    ggplot(aes(fct_reorder(ba, capacity, sum), capacity, fill = source_recode)) +
+    geom_bar(stat = "identity", position = "stack") +
+    theme(
+        axis.text.x = element_text(angle = 45, hjust = 1)
+    ) +
+    scale_y_continuous(labels = scales::comma)
+```
+
